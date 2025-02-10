@@ -136,7 +136,7 @@ Diferencias en los rasgos determinan las capacidades de las especies para explot
 - Si la variación espacial en el ambiente está autocorrelacionada, entonces, con el aumento de la distancia desde este sitio, el ambiente se hará progresivamente más diferente, los requisitos del nicho de la especie se cumplirán con menos frecuencia y la abundancia disminuirá. 
 
 **Amplitud del nicho**
-![](figuras/amplitud_del_nicho.png)
+![](figuras/amplitud_del_nicho.png) \
 1) Especies con un *NB* estrecho y baja abundancia local pero un gran tamaño de rango geográfico.
 2) Especies con un *NB* estrecho y un rango geográfico pequeño pero alta abundancia.  
 3) Especies con un *NB* amplio pero un rango geográfico y abundancia pequeños.
@@ -145,12 +145,12 @@ Diferencias en los rasgos determinan las capacidades de las especies para explot
 También llamada la hipótesis de la disponibilidad de hábitat [(Venier & Fahrig 1996)](https://www.jstor.org/stable/2461494:) sostiene que las especies capaces de utilizar las condiciones ambientales más comunes que se encuentran a través de los hábitats en una región (es decir, una posición central en el nicho) serán tanto locales abundantes como de amplia distribución.
 
 **Distribución y disponibilidad de hábitat**
-![](figuras/posicion_nichop.png)
+![](figuras/posicion_nichop.png) \
 Distribución (medida como la proporción de celdas de hábitat de cría ocupadas) graficada contra COVER (proporción del área total del paisaje en hábitat de cría) para 100 simulaciones.
 
 
 **Abundancia y disponibilidad de hábitat**
-![](figuras/abundancia_cover.png)
+![](figuras/abundancia_cover.png) \
 **Planteamientos de la teoría**  \
 Correlación positiva entre:  \
 (1) la abundancia y el número de celdas de hábitat de cría en el paisaje de simulación.  \
