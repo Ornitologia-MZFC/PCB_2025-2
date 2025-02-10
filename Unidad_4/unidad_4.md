@@ -10,7 +10,7 @@
 La distribución de un taxón está limitada a un conjunto de ambientes y hábitats a los que su comportamiento y morfología están mejor adaptados.
 
 ***Toxostoma redivivum***
-![](figuras/grinell_example.png)
+![](figuras/grinell_example.png) 
 
 ![](figuras/grinell_1917.png)
 
@@ -22,7 +22,7 @@ La distribución de un taxón está limitada a un conjunto de ambientes y hábit
 El concepto de nicho de Hutchinson a diferencia del de Grinnell y Elton define el nicho como una propiedad de la especie en lugar de una propiedad de la comunidad (Schoener 1989). 
 
 **La dualidad de Hutchinson**
-![](figuras/dualidad_hutchinson.png)
+![](figuras/dualidad_hutchinson.png) \
 Dos nichos fundamentales definidos por un par de variables en un espacio de nicho bidimensional.  \
 Solo una especie puede persistir en la región de intersección del subconjunto. \
 Las líneas que unen puntos equivalentes en el espacio de nicho y el espacio de biotopo indican la relación entre los dos espacios. \
@@ -39,9 +39,8 @@ La distribución de las dos especies involucradas se muestra en el panel derecho
 ## 4.1 Función de las especies
 Algunas dimensiones del nicho de una especie representan funciones o servicios del ecosistema, como la polinización (**nichos funcionales**). Por tanto, la riqueza de especies podría estar relacionada con la función del ecosistema. 
 
-
-**Riqueza y función del ecosistema**
-![](figuras/df_funcion_ecosystem.png)
+**Riqueza y función del ecosistema** \
+![](figuras/df_funcion_ecosystem.png) \
 Considera una comunidad: \
 (a) Las especies estrechamente relacionadas son más similares funcionalmente que las especies distantes. \
 (b) Baja diversidad filogenética: incluirá especies con un alto solapamiento en los rasgos funcionales, lo que podría generar una fuerte competencia interespecífica que limite las abundancias, y como consecuencia, bajas funciones ecosistémicas. \
@@ -54,12 +53,11 @@ Considera una comunidad: \
 Aumentar la riqueza de especies otorga estabilidad a las funciones ecosistémicas, es decir, la varianza de una función ecosistémica promedio disminuye en las mediciones a lo largo del tiempo o el espacio a medida que aumenta la biodiversidad.
 
 **Relación entre riqueza de especies y función ecosistémica**
-![](figuras/ecosystem_function.png)
+![](figuras/ecosystem_function.png) \
 Los ecosistemas son más variables en términos de composición de especies que en función ecosistémica.
 
-**Ejemplos de función ecosistémica**
-![](figuras/ejemplos_funcion_ecosis.png)
-
+**Ejemplos de función ecosistémica** \
+![](figuras/ejemplos_funcion_ecosis.png) \
 
 [The species composition-ecosystem function relationship: A global meta-analysis using data from intact and recovering ecosystems (Carrick & Forsythe 2020)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7392319/).
 
@@ -76,7 +74,7 @@ La teoría ecológica postula que una mayor riqueza de especies debería estar a
 
 
 **Diagrama conceptual con tres hipótesis** 
-![](figuras/nicho_hipotesis.png)
+![](figuras/nicho_hipotesis.png) \
 Los círculos marrones representan la disponibilidad de recursos, los círculos verdes y rojos representan un gradiente del tamaño del nicho de la comunidad, y las elipses representan los nichos de las especies. \
 (a) El nicho trófico de la comunidad y de las especies aumenta con una mayor disponibilidad y heterogeneidad de los recursos (e.g., alimento). \
 (b) El nicho trófico de las especies disminuye a través de la especialización, mientras que el nicho de la comunidad aumenta a medida que la riqueza taxonómica es mayor. \
@@ -88,7 +86,7 @@ Los círculos marrones representan la disponibilidad de recursos, los círculos 
 Mientras que el concepto de nicho ecológico incluye diversos factores abióticos y bióticos en un espacio multidimensional, varias dimensiones del nicho representan procesos bióticos importantes y, por lo tanto, funciones ecosistémicas, resaltadas en los términos **nicho funcional** y **complementariedad funcional del nicho**.
 
 **La diferenciación de nichos ecológicos es conocida por promover la biodiversidad** 
-![](figuras/Complementaridad_nicho.png)
+![](figuras/Complementaridad_nicho.png) \
 - La redundancia funcional en una comunidad implica que las especies son mutuamente sustituibles en términos de una función ecológica. 
 - La redundancia puede mejorar la estabilidad de una comunidad, pero también puede aumentar la competencia interespecífica cuando la función objetivo representa un recurso limitado. 
 - La complementariedad describe que las especies son funcionalmente diferentes, lo que requiere que los nichos sean relativamente estrechos.
@@ -135,7 +133,7 @@ Diferencias en los rasgos determinan las capacidades de las especies para explot
 
 - Si la variación espacial en el ambiente está autocorrelacionada, entonces, con el aumento de la distancia desde este sitio, el ambiente se hará progresivamente más diferente, los requisitos del nicho de la especie se cumplirán con menos frecuencia y la abundancia disminuirá. 
 
-**Amplitud del nicho**
+**Amplitud del nicho** \
 ![](figuras/amplitud_del_nicho.png) \
 1) Especies con un *NB* estrecho y baja abundancia local pero un gran tamaño de rango geográfico.
 2) Especies con un *NB* estrecho y un rango geográfico pequeño pero alta abundancia.  
@@ -144,12 +142,12 @@ Diferencias en los rasgos determinan las capacidades de las especies para explot
 #### La hipótesis de la posición del nicho 
 También llamada la hipótesis de la disponibilidad de hábitat [(Venier & Fahrig 1996)](https://www.jstor.org/stable/2461494:) sostiene que las especies capaces de utilizar las condiciones ambientales más comunes que se encuentran a través de los hábitats en una región (es decir, una posición central en el nicho) serán tanto locales abundantes como de amplia distribución.
 
-**Distribución y disponibilidad de hábitat**
+**Distribución y disponibilidad de hábitat** \
 ![](figuras/posicion_nichop.png) \
 Distribución (medida como la proporción de celdas de hábitat de cría ocupadas) graficada contra COVER (proporción del área total del paisaje en hábitat de cría) para 100 simulaciones.
 
 
-**Abundancia y disponibilidad de hábitat**
+**Abundancia y disponibilidad de hábitat** \
 ![](figuras/abundancia_cover.png) \
 **Planteamientos de la teoría**  \
 Correlación positiva entre:  \
@@ -157,14 +155,14 @@ Correlación positiva entre:  \
 (2) la distribución y el número de celdas de hábitat de cría en el paisaje.  \
 (3) La abundancia y la distribución.
 
-**Hipótesis de las relaciones entre la rasgos, la amplitud del nicho, la posición del nicho, la abundancia y la ocupación.**
+**Hipótesis de las relaciones entre la rasgos, la amplitud del nicho, la posición del nicho, la abundancia y la ocupación.** \
 ![](figuras/niche_position.png)
 
 - Se espera que las especies funcionalmente distintas tengan amplitudes de nicho más amplias y vivan en las condiciones ambientales más comunes encontradas a través de los hábitats (es decir, tengan una posición central en el nicho; Figura 1, P1a). 
 
 - Alternativamente, puede ser que combinaciones de rasgos muy distintas restrinjan el rango de condiciones ambientales de una especie y representen una estrategia ecológica adecuada para un especialista en hábitat; de ser así, las especies funcionalmente distintas tendrían amplitudes de nicho estrechas y podrían ocupar hábitats centrales o marginales (Figura 1, P1b). 
 
-![](figuras/esquema_de_rasgos.png)
+![](figuras/esquema_de_rasgos.png) \
 - Según las hipótesis de amplitud del nicho y posición del nicho, las species funcionalmente distintas tendrán amplitudes de nicho más amplias y estarán en las condiciones ambientales más comunes encontradas esto llevaría a altas abundancias y registros frecuentes de tales especies (Figura 1, panel inferior, P2).
 
 - Combinaciones de rasgos muy distintas restrinjan el rango de condiciones ambientales de una especie y representen una estrategia ecológica adecuada para un especialista en hábitat. A través de la hipótesis de amplitud del nicho, se espera que tal especialización en hábitat conduzca a una baja abundancia local y una presencia poco frecuente (Figura 1, panel inferior, P3).
@@ -190,7 +188,6 @@ Más información en [Within outlying mean indexes: refining the OMI analysis fo
 
 **Parte 2: Análisis de Correspondencia Canónica.** \
 También exploraremos las correlaciones entre el conjuntos de variables ambientales y el conjunto de variables dependientes (presencia de las especies).
-
 
 Para la práctica seguiremos el tutorial de [(KarasiewiczStephane/WitOMI).](https://github.com/KarasiewiczStephane/WitOMI) \
 Otro [tutorial de perrygeo](https://gist.github.com/perrygeo/7572735) usando el paquete [vegan.](https://cran.r-project.org/package=vegan) 
@@ -225,7 +222,7 @@ La mayoría de estudios se centran en una sola especie. \
 **Qué alternativas se les ocurren?**
 Las especies introducidas proporcionan un 'experimento semi-natural' en el que se enfrentan a condiciones ambientales novedosas.
 
-**Representación del nicho**
+**Representación del nicho** \
 ![](figuras/nicho_tipos.png) \
 Framework of species’ ecological niches across accessible areas in native (yellow) and invaded (red) 
 ranges. \
@@ -238,15 +235,15 @@ in the invaded range (i.e., not used in the native range, even when available; d
 (E) Environments not available in either native or invaded ranges (=the unfilled niche). Similar environments available in both, the native and invaded ranges are indicated with a dashed line. \
 **Cuál es el nicho fundamental?** 
 
-**Mecanismos de cambio del nicho realizado.**
-![](figuras/nicho_cambios.png)
+**Mecanismos de cambio del nicho realizado.** \
+![](figuras/nicho_cambios.png) \
 (A) El nicho realizado del rango nativo de una especie. \
 (B) Un cambio de nicho en el que los cambios en las restricciones sobre el movimiento de una especie han permitido alcanzar una mayor sección del nicho biótico y abiótico. \
 (C) Un cambio de nicho en el que los cambios en las restricciones bióticas sobre una especie han permitido alcanzar una mayor sección del nicho de movimiento y abiótico. \
 (D) Un cambio de nicho en el que los límites abióticos de la especie han cambiado.
 
-**Cambios en el nicho**
-![](figuras/niche_shift.png)
+**Cambios en el nicho** \
+![](figuras/niche_shift.png) \
 **T1:** Al producirse una expansión geográfica de una especie, primero se debe determinar si el nuevo nicho es un caso de conservadurismo del nicho o si ha ocurrido un cambio de nicho. \
 **T2:** Falsos positivos pueden ocurrir porque no ha habido un cambio en el clima experimentado por la población introducida: 
 - Porque las variables climáticas medidas no son biológicamente significativas (conservadurismo del nicho macroclimático). 
@@ -256,19 +253,19 @@ in the invaded range (i.e., not used in the native range, even when available; d
 - En algunos casos, el nuevo nicho resultará ser parte del nicho fundamental de la especie, en cuyo caso el cambio se denomina ‘cambio del nicho realizado’.  
 - En otros casos, se han producido cambios evolutivos en la población que permiten la supervivencia de la especie en el nuevo nicho (cambio evolutivo del nicho).
 
-**Qué dicen los datos empíricos?**
-![](figuras/nicho_cambios_stats.png)
+**Qué dicen los datos empíricos?** \
+![](figuras/nicho_cambios_stats.png) 
 
 ### Transferencias en tiempo y Espacio
-**La dualidad de Hutchinson**
-![La dualidad de Hutchinson](figuras/Huntchinsons_duality.png)
+**La dualidad de Hutchinson** \
+![La dualidad de Hutchinson](figuras/Huntchinsons_duality.png) \
 La imagen fue tomada de Soberón et al., 2017. [Click aquí para ver la imagen y la nota en Revista Mexicana de Biodiversidad.](https://www.redalyc.org/journal/425/42551127018/html/)
 
 Aquí otro ejemplo.
 
 Como se distribuyen en el espacio geográfico algunos de los principales biomas presentes en el continente Americano. 
 
-![](figuras/ecosystem_in_geographical_space.png)
+![](figuras/ecosystem_in_geographical_space.png) \
 Como se distribuyen esos mismos biomas en el espacio ambiental con base en los dos primeros componentes de un análisis de PCA.
 
 ![](figuras/ecosystems_ecological_space.png)
@@ -277,8 +274,8 @@ Como se distribuyen esos mismos biomas en el espacio ambiental con base en los d
 
 Está claro que el mismo nicho fundamental NF, expresado en diferentes regiones con espacios ambientales correspondientemente distintos E' y E'', producirá distintos nichos fundamentales existentes y, por lo tanto, con alta probabilidad, diferentes NR, incluso en ausencia de competidores y procesos evolutivos.
 
-**Anisotropía del espacio ambiental**
-![](figuras/anisotropia_espacio_ambiental.png)
+**Anisotropía del espacio ambiental** \
+![](figuras/anisotropia_espacio_ambiental.png) \
 Los puntos de ocurrencia que caen en **N**\**F* de la especie en las regiones norte y sur en el mapa se muestran en azul y rojo, respectivamente. \
 A pesar de una amplia superposición general, las combinaciones climáticas correspondientes a los dos rangos son diferentes, y una especie capaz de alcanzar cada celda de la cuadrícula tendría diferente **N**\**F* (y por lo tanto, nicho realizado) en las regiones norte y sur. \
 Este resultado se mantiene incluso asumiendo: (i) **N***F* constante, (ii) ausencia de competidores o interactores de cualquier tipo, y (iii) equilibrio total de dispersión dentro de cada subregión.
@@ -333,8 +330,8 @@ YouTube - Dr. AT. Peterson et al.
 ## 4.4 Conservadurismo de nicho
 Es la tendencia que especies relacionadas presenten nichos similares (fundamental o realizado; [Pearman et al., 2008](https://pubmed.ncbi.nlm.nih.gov/18289716/)).
 
-**Origen evolutivo y consecuencias ecológicas del conservadurismo de nicho filogenético** 
-![](figuras/pnc_factors_and_consequences.png)
+**Origen evolutivo y consecuencias ecológicas del conservadurismo de nicho filogenético**  \
+![](figuras/pnc_factors_and_consequences.png) \
 Factores endógenos de restricción sobre los fenotipos hasta los factores exógenos de selección ecológica. \
 Esto conduce a los patrones principales del CFN, incluyendo conservadurismo, restricción y divergencia de nichos entre especies.
 
@@ -343,13 +340,13 @@ Esto conduce a los patrones principales del CFN, incluyendo conservadurismo, res
 En el contexto de la especiación, el CFN actúa sobre las poblaciones locales para producir múltiples especies. La población local es, por lo tanto, la unidad fundamental del CNP para la especiación, pero el impacto del CNP es crucial para interpretar los patrones subsecuentes de ensamblaje de comunidades, diversidad regional y biogeografía a niveles más altos a lo largo de la filogenia.
 
 **Conservadurismo de nicho como patrón**\
-![](figuras/conservadurismo_filo.png)
+![](figuras/conservadurismo_filo.png) \
 
 #### Conservadurismo de nicho como proceso
 El CFN como proceso puede llevar potencialmente a la divergencia de nichos en hábitats heterogéneos o en rápida transformación, ya que las poblaciones se desplazan en lugar de adaptarse. El CFN provoca que las poblaciones se separen alopátricamente. Si las poblaciones se adaptan total o parcialmente a los entornos cambiantes, la separación geográfica se minimizaría y la selección para la especiación ecológica se reduciría.
 
-**Conservadurismo de nicho como proceso:**
-![](figuras/conservadurismo.png)
+**Conservadurismo de nicho como proceso:** \
+![](figuras/conservadurismo.png) \
 **(a):** \
 **(b):** \
 **(c):** \
@@ -360,21 +357,21 @@ El CFN como proceso puede llevar potencialmente a la divergencia de nichos en h�
 El CFN como proceso (retención instantánea de nichos) podría promover la especiación (CFN como patrón), resultando ya sea en divergencia de nichos o en conservadurismo de nichos.
 
 
-**Factores que pueden influir en la especiación a través del CFN**
-![](figuras/pnc_geografia.png)
+**Factores que pueden influir en la especiación a través del CFN** \
+![](figuras/pnc_geografia.png) \
  Los eventos de especiación que ocurren en diferentes puntos a lo largo de estos ejes pueden resultar en diferentes patrones como se describe arriba de los gráficos, incluyendo conservadurismo y difernciación. \
 La **curva I** representa una variable ambiental que cambia lentamente de un valor alto a uno bajo, con poblaciones adaptadas a cada extremo encontrándose en el medio. \
 La **curva II** representa dos áreas ecológicamente similares separadas por un valor intermedio más alto para una variable ambiental dada, con dos poblaciones igualmente adaptadas acercándose al borde de sus límites de rango en esa área. 
 
 
-**Artículo de discusión 3:**\
+**Artículo de discusión 3:** \
 [Phylogenetic niche conservatism and the evolutionary basis of ecological speciation (Pyron et al., 2014).](https://onlinelibrary.wiley.com/doi/10.1111/brv.12154)
 
 **Aplicación en el filo-morfo espacio (Phylomorphospace)**
 Un enfoque en el filo-morfo espacio nos permite considerar la filogenia, la disparidad y el tempo simultáneamente. [(Lloyd 2018)](https://onlinelibrary.wiley.com/doi/full/10.1111/pala.12380).
 
-**Ejemplo con osos:**
-![](figuras/osos_filomorphospace.png)
+**Ejemplo con osos:** \
+![](figuras/osos_filomorphospace.png) \
 Resultados del espacio filoclímatico para ocho especies actuales de la familia Ursidae. 
 - El modelo conserva las relaciones entre las secuencias mitocondriales completas de las especies. 
 - Posiciona cada punta del árbol en la combinación de precipitación y temperatura de su centroide ambiental.
@@ -408,8 +405,8 @@ TEMPO, AND DISPARITY (Lloyd 2018).](https://onlinelibrary.wiley.com/doi/pdf/10.1
 ## 4.5 Modificaciones de las poblaciones
 La distribución de la diversidad genética dentro y entre las poblaciones en relación con los rangos geográficos de las especies es fundamental para comprender los procesos de evolución, especiación y biogeografía.
 
-**Procesos evolutivos en el conservadurismo de nicho y su relación con las áreas de distribución:**
-![](figuras/conservadurismo.png)
+**Procesos evolutivos en el conservadurismo de nicho y su relación con las áreas de distribución:** \
+![](figuras/conservadurismo.png) \
 
 [Phylogenetic niche conservatism and the evolutionary basis of ecological speciation (Pyron et al., 2014).](https://onlinelibrary.wiley.com/doi/10.1111/brv.12154)
 
@@ -418,43 +415,43 @@ También pueden representar sumideros demográficos mantenidos por la inmigraci�
 Los sitios periféricos también pueden recibir flujo génico que puede contrarrestar las presiones de selección local y la adaptación local. \
 En general estas poblaciones pueden ser más propensas a la pérdida de diversidad genética. 
 
-### A nivel genético
-![](figuras/centralidad_de_nicho.png)
+### A nivel genético 
+![](figuras/centralidad_de_nicho.png) \
 Relaciones hipotetizadas entre la distancia al centro del nicho ecológico, el centro del rango geográfico y la diversidad genética. \
 **H0:** La marginalidad ambiental y geográfica coinciden, lo que lleva a que ambas estén negativamente correlacionadas con la diversidad genética. \
 **HA:** La marginalidad ambiental y geográfica están desacopladas, lo que da lugar a la falta de relación entre la diversidad genética y la centralidad geográfica.
 
-**Ejemplo con *Lynx rufus***
-![linx_rufus](figuras/linx_rufus.png)
+**Ejemplo con *Lynx rufus*** \
+![linx_rufus](figuras/linx_rufus.png) \
 
-**Distribución geográfica de la variación genética:**
-![](figuras/nicho_diversidad_genetica.png)
+**Distribución geográfica de la variación genética:** \
+![](figuras/nicho_diversidad_genetica.png) \
 Relaciones entre la diversidad genética y la centralidad en *Lynx rufus*. El panel izquierdo muestra las regresiones lineales entre la diversidad genética y la distancia al centro del nicho o geográfico.
 
 [RELATIONSHIP OF GENETIC DIVERSITY AND NICHE CENTRALITY: A SURVEY AND ANALYSIS (Lira-Noriega & Manthey 2013).](https://onlinelibrary.wiley.com/doi/full/10.1111/evo.12343)
 
 ### A nivel morfológico:
-**Filogenia**
+**Filogenia** \
 
-![](figuras/bats_phylogeny_2.png)
+![](figuras/bats_phylogeny_2.png) \
 
-**Morfología**
-![](figuras/hoary_bats.png)
+**Morfología** \
+![](figuras/hoary_bats.png) \
 
-**Nicho climático**
-![](figuras/nicho_del_bat.png)
+**Nicho climático** \
+![](figuras/nicho_del_bat.png) \
 
 [Environmentally driven phenotypic convergence and niche conservatism accompany speciation in hoary bats (Soto‑Centeno & Simmons 2022).](https://www.nature.com/articles/s41598-022-26453-y)
 
 ### Bonus
-**Zonas de contacto**
-![](figuras/hybrid_zones.png)
+**Zonas de contacto** \
+![](figuras/hybrid_zones.png) \
 Las zonas híbridas son regiones en las que poblaciones distintas se encuentran, se emparejan y producen descendencia genéticamente mezclada, es decir, híbrida. Por lo tanto, las zonas híbridas ofrecen una visión sobre las barreras genéticas que subyacen al origen de las especies.
 
 [Hybrid zones (Wielstra 2021).](https://www.cell.com/current-biology/fulltext/S0960-9822(20)31758-9?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982220317589%3Fshowall%3Dtrue)
 
-**Modificaciones a nivel **Mitocondrial** - **Fenotípico** - **Genómico** - **Conductual****
-![](figuras/clines.png)
+**Modificaciones a nivel **Mitocondrial** - **Fenotípico** - **Genómico** - **Conductual**** \
+![](figuras/clines.png) \
 Clinas geográficas que muestran la transición de: \
 (A) Caracteres genéticos a lo largo del gradiente TMVB. \
 (B) Caracteres Fenotípicos a lo largo del gradiente TMVB. 
