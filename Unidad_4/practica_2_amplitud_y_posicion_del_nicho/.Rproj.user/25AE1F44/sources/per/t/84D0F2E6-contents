@@ -1,0 +1,396 @@
+# VARIABLES SELECTION
+
+# load libraries 
+library(ENMeval)
+library(ENMTools)
+library(raster)
+library(rgdal)
+library(dplyr)
+library(sp)
+library(sf)
+library(spThin)
+library(dismo)
+library(sf)
+library(ggplot2)
+library(ellipsenm)
+library(ntbox)
+library(usdm )
+
+setwd("C:\\Users\\vicen\\OneDrive\\Escritorio\\pcb_curso_2025-1_bases_ecologicas_y_genomicas\\PCB-2025-1-Bases-ecologicas-y-genomicas\\Unidad_2\\modelos_de_nicho_en_r\\results/")
+
+# Worldclim Vars
+wlclim_bios<-list.files(path="D:/world_clim_set_new/bio_2_5m_1_4", pattern = ".bil$", full.names=TRUE)
+wlclim_stack<-stack(wlclim_bios)
+
+# All areas calibration
+areas_calibration <- c('colliei_aream',
+                       'calocittaf_aream',
+                       'psilorhinus_aream')
+
+
+for (i in seq_along(areas_calibration)){
+  area_calibration <- readOGR("D:/Calocittas_Psilo_ENM/data/shapes_niche_urracas/",
+                              layer=areas_calibration[i])
+  crs(area_calibration) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+  assign(paste0(areas_calibration[i]), area_calibration)
+}
+
+
+# TOTAL AREA FOR ALL THREE SPECIES
+colliei_formosa_aream <- raster::union(colliei_aream, calocittaf_aream)
+plot(colliei_formosa_aream)
+colliei.formosa.psilorhinus <- raster::union(psilorhinus_aream, colliei_formosa_aream) 
+plot(colliei.formosa.psilorhinus, col = "blue")
+
+# cut all layers with total area calibration
+total_areas_calibration_stack <- crop(wlclim_stack, extent(colliei.formosa.psilorhinus))
+plot(colliei.formosa.psilorhinus)
+plot(total_areas_calibration_stack)
+total_areas_calibration_stack_mask <- mask(total_areas_calibration_stack, colliei.formosa.psilorhinus)
+plot(total_areas_calibration_stack_mask)
+
+# correlation between vars
+psicalo.corr <- raster.cor.matrix(total_areas_calibration_stack_mask, method="pearson")
+
+#export matrix
+write.table(psicalo.corr, file = "C:\\Users\\vicen\\OneDrive\\Escritorio\\pcb_curso_2025-1_bases_ecologicas_y_genomicas\\PCB-2025-1-Bases-ecologicas-y-genomicas\\Unidad_2\\modelos_de_nicho_en_r\\results/aream.corr.matrix.csv", sep=",")
+psicalo.corr.plot <- raster.cor.plot(total_areas_calibration_stack_mask, method="pearson")
+psicalo.corr.plot [1]
+psicalo.corr.plot [2]
+
+### New correlation between subset vars
+### 2, 3, 5, 6, 12, 15, 18 
+
+psilocalo.subset.vars <- raster::subset(total_areas_calibration_stack_mask, c("bio02", "bio04", "bio05", "bio06", "bio13", "bio14", "bio15", "bio18", "bio19"))
+plot(psilocalo.subset.vars)
+
+# correlation between subset vars
+psicalo.sub.corr <- raster.cor.matrix(psilocalo.subset.vars, method="pearson")
+write.table(psicalo.sub.corr, file = "C:\\Users\\vicen\\OneDrive\\Escritorio\\pcb_curso_2025-1_bases_ecologicas_y_genomicas\\PCB-2025-1-Bases-ecologicas-y-genomicas\\Unidad_2\\modelos_de_nicho_en_r\\results/psilocalo.sub.corr.matrix.csv", sep=",")
+psicalo.sub.corr.plot <- raster.cor.plot(psilocalo.subset.vars, method="pearson")
+psicalo.sub.corr.plot [1]
+psicalo.sub.corr.plot [2]
+
+#####################################################################
+#set the working directory
+setwd("C:\\Users\\vicen\\OneDrive\\Escritorio\\pcb_curso_2025-1_bases_ecologicas_y_genomicas\\PCB-2025-1-Bases-ecologicas-y-genomicas\\Unidad_2\\modelos_de_nicho_en_r\\")
+
+
+# PRIMERA LIMPIEZA DATOS
+
+#read csv species
+pmorio_occurrences <- read.csv("D:/Calocittas_Psilo_ENM/data/bases/pmorio_occurrences.csv", sep = ",", header = TRUE)
+head(pmorio_occurrences)
+cformosa_occurrences <- read.csv("D:/Calocittas_Psilo_ENM/data/bases/cformosa_occurrences.csv", sep = ",", header = TRUE)
+head(cformosa_occurrences)
+colliei_occurrences <- read.csv("D:/Calocittas_Psilo_ENM/data/bases/colliei_occurrences.csv", sep = ",", header = TRUE)
+head(colliei_occurrences)
+
+# make the dataframe and remove Na´s
+#psilorhinus morio
+pmorio_occur_df <- as.data.frame (na.omit(pmorio_occurrences[ , c("Longitude","Latitude")]))
+# make the dataframe spatial points
+pmorio_occur_spdf <- SpatialPoints(pmorio_occur_df)
+# Establecer el sistema de referencia
+CRS.new<-CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")  
+# Asignar ese sistema a los puntos
+proj4string(pmorio_occur_spdf)<-CRS.new
+#remove duplicates
+pmorio_occur_spdf_dups <- remove.duplicates(pmorio_occur_spdf)
+# Data frame and column of species 
+pmorio_occur_spdf_dups_df <- as.data.frame(pmorio_occur_spdf_dups)
+#Para correr la función de limpieza de coordenandas necesitamos agregar una columna con el nombre de mi especie.
+pmorio_occur_spdf_dups_df["Species"]<-NA
+pmorio_occur_spdf_dups_df$Species <- "pmorio"
+#reordenar las columnas
+pmorio_occur_spdf_dups_df <- pmorio_occur_spdf_dups_df[c("Species", "Longitude", "Latitude")]
+head(pmorio_occur_spdf_dups_df)
+
+#Calocitta formosa
+cformosa_occur_df <- as.data.frame (na.omit(cformosa_occurrences[ , c("Longitude","Latitude")]))
+# make the dataframe spatial points
+cformosa_occur_spdf <- SpatialPoints(cformosa_occur_df)
+# Establecer el sistema de referencia
+CRS.new<-CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")  
+# Asignar ese sistema a los puntos
+proj4string(cformosa_occur_spdf)<-CRS.new
+#remove duplicates
+cformosa_occur_spdf_dups <- remove.duplicates(cformosa_occur_spdf)
+# Data frame and column of species 
+cformosa_occur_spdf_dups_df <- as.data.frame(cformosa_occur_spdf_dups)
+#Para correr la función de limpieza de coordenandas necesitamos agregar una columna con el nombre de mi especie.
+cformosa_occur_spdf_dups_df["Species"]<-NA
+cformosa_occur_spdf_dups_df$Species <- "cformosa"
+#reordenar las columnas
+cformosa_occur_spdf_dups_df <- cformosa_occur_spdf_dups_df[c("Species", "Longitude", "Latitude")]
+head(cformosa_occur_spdf_dups_df)
+
+#Calocitta colliei
+colliei_occur_df <- as.data.frame (na.omit(colliei_occurrences[ , c("Longitude","Latitude")]))
+# make the dataframe spatial points
+colliei_occur_spdf <- SpatialPoints(colliei_occur_df)
+# Establecer el sistema de referencia
+CRS.new<-CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")  
+# Asignar ese sistema a los puntos
+proj4string(colliei_occur_spdf)<-CRS.new
+#remove duplicates
+colliei_occur_spdf_dups <- remove.duplicates(colliei_occur_spdf)
+# Data frame and column of species 
+colliei_occur_spdf_dups_df <- as.data.frame(colliei_occur_spdf_dups)
+#Para correr la función de limpieza de coordenandas necesitamos agregar una columna con el nombre de mi especie.
+colliei_occur_spdf_dups_df["Species"]<-NA
+colliei_occur_spdf_dups_df$Species <- "colliei"
+#reordenar las columnas
+colliei_occur_spdf_dups_df <- colliei_occur_spdf_dups_df[c("Species", "Longitude", "Latitude")]
+head(colliei_occur_spdf_dups_df)
+
+
+# thinned the occureence records with "..._occur_spdf_dups_df" basedata
+pmorio_20km <-
+  thin (loc.data = pmorio_occur_spdf_dups_df, 
+        lat.col = "Latitude", long.col = "Longitude", 
+        spec.col = "Species", 
+        thin.par = 20, # número en km para el buffer de nearest neighbor distance
+        reps = 1, 
+        locs.thinned.list.return = TRUE, 
+        write.files = TRUE, 
+        max.files = 1, # número de archivos filtrados
+        out.dir = "results/", 
+        out.base = "pmorio_20km", 
+        write.log.file = TRUE,
+        log.file = "results/log_file_spthinn_pmorio.txt")
+
+formosa_20km <-
+  thin (loc.data = cformosa_occur_spdf_dups_df, 
+        lat.col = "Latitude", long.col = "Longitude", 
+        spec.col = "Species", 
+        thin.par = 20, # número en km para el buffer de nearest neighbor distance
+        reps = 1, 
+        locs.thinned.list.return = TRUE, 
+        write.files = TRUE, 
+        max.files = 1, # número de archivos filtrados
+        out.dir = "results/", 
+        out.base = "formosa_20km", 
+        write.log.file = TRUE,
+        log.file = "results/log_file_spthinn_formosa.txt")
+
+colliei_20km <-
+  thin (loc.data = colliei_occur_spdf_dups_df, 
+        lat.col = "Latitude", long.col = "Longitude", 
+        spec.col = "Species", 
+        thin.par = 20, # número en km para el buffer de nearest neighbor distance
+        reps = 1, 
+        locs.thinned.list.return = TRUE, 
+        write.files = TRUE, 
+        max.files = 1, # número de archivos filtrados
+        out.dir = "results/", 
+        out.base = "colliei_20km", 
+        write.log.file = TRUE,
+        log.file = "results/log_file_spthinn_colliei.txt")
+
+
+## REMOVE SOME RECORDS WITH PCA 
+# Species OCCURRENCES 
+colliei_20km
+formosa_20km
+pmorio_20km
+
+# Occurrences points
+species_presence_points <- c("colliei_20km", "formosa_20km", "pmorio_20km")
+species_presence_name <- c("colliei", "formosa", "pmorio")
+
+# MAKE SPATIALOBJECT WITH THINNED BASES
+for (i in seq_along(species_presence_points)) { 
+  species.presence.points <- as.data.frame(get(species_presence_points[i]))
+  # make the dataframe spatial points
+  species.presence.points_spdf <- SpatialPoints(species.presence.points[c(1,2)])
+  plot(species.presence.points_spdf)
+  # Establecer el sistema de referencia
+  CRS.new <- CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")  
+  # Asignar ese sistema a los puntos
+  proj4string(species.presence.points_spdf) <- CRS.new
+  
+  assign(paste0("spatial_", species_presence_name[i]), species.presence.points_spdf)
+  vals.presences <- extract(total_areas_calibration_stack_mask, species.presence.points_spdf)
+  coords_spatial <- coordinates(species.presence.points_spdf)
+  table.shapes <- cbind(coords_spatial, vals.presences)
+  table.shapes <- as.data.frame(table.shapes)
+  table.shapes <-na.omit(table.shapes)
+  
+  #add column area_m and fill with area
+  table.shapes["area_m"] <-NA 
+  table.shapes$area_m <- species_presence_name[i]
+  table.shapes["id"] <-NA 
+  table.shapes$id <- seq_along(1:nrow(table.shapes))
+  colnames(table.shapes) <- c('Longitude', "Latitude", colnames(vals.presences),"area_m", "id" )
+  assign(paste0("table_", species_presence_name[i],"_thin"), table.shapes)
+}
+
+# Spatial object
+plot(spatial_colliei)
+
+# Example table
+table_colliei_thin
+
+# Merge tables
+species.merge.tables <- rbind(table_formosa_thin, table_colliei_thin,
+                              table_pmorio_thin)
+
+#export matrix
+write.table(species.merge.tables, file = "results/species.merge.tables.csv", sep=",")
+
+# PCA with all vars
+species.table.presences <- species.merge.tables [3:21]
+pca.species.presences <- prcomp(species.table.presences, scale. = TRUE)
+#calculate total variance explained by each principal component
+pca.species.presences$sdev^2 / sum(pca.species.presences$sdev^2)
+# Plot
+pca.species.presences.df <- as.data.frame(pca.species.presences$x)
+ggplot(pca.species.presences.df, aes(x = PC1, y = PC2, color = species.merge.tables$area_m)) +
+  geom_point( size = 0.9) +
+  #theme(legend.position="right") +
+  theme(axis.text=element_text(size=12)) +
+  theme(
+    axis.title.x = element_text(size = 16),
+    axis.text.x = element_text(size = 14),
+    axis.title.y = element_text(size = 16),
+    axis.text.y = element_text(size = 14)) +
+  xlab("PC1") + ylab("PC2") +
+  geom_text(aes(label = species.merge.tables$id)) +
+  stat_ellipse(aes(x = PC1,y=PC2,
+                   lty=factor(species.merge.tables$area_m),
+                   fill=factor(species.merge.tables$area_m)),
+               lwd = 1.3,
+               level = 0.99,
+               linetype = 1,
+               geom = "polygon",
+               alpha = 0.15) +
+  scale_fill_manual(values=c("darkblue","tan", "gray")) +
+  scale_color_manual(values=c("formosa"="dodgerblue2", "colliei"="darkblue",
+                              "pmorio" ="coral"))
+
+# REMOVING SOME RECORDS BASED ON PCA
+# FINAL TABLES
+# REMOVED BASE ON PCA AND GEOGRAPHY
+colliei.tables_r <- subset(species.merge.tables , species.merge.tables$area_m == 'colliei' & 
+                             !species.merge.tables$id %in% c(31, 7)) # 45 66 72 5
+#calocitta.tables_r <- subset(species.merge.tables, species.merge.tables$area_m == 'formosa' & 
+ #                              !species.merge.tables$id == 57) # 43,44, 57
+calocitta.tables_r <- table_formosa_thin
+psilorhinus.tables_r <- subset(species.merge.tables, species.merge.tables$area_m == 'pmorio' & 
+                                !species.merge.tables$id == 38) #30, , 42, 111, 125)
+
+# Merge tables
+species.merge.tables.r <- rbind(calocitta.tables_r, colliei.tables_r,
+                                psilorhinus.tables_r)
+
+#SPATIAL OBJECT
+species.occurrence.points <- species.merge.tables.r[c(1,2,22)]
+species.occurrence.points <- as.data.frame(species.occurrence.points)
+# make the dataframe spatial points
+species.occurrence.points_spdf <- SpatialPoints(species.occurrence.points[c(1,2)])
+plot(species.occurrence.points_spdf)
+# Establecer el sistema de referencia
+CRS.new<-CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")  
+# Asignar ese sistema a los puntos
+proj4string(species.occurrence.points_spdf)<-CRS.new
+
+##############################################################
+
+# Plot 
+#make the spatial objects
+
+# Spatial points data frame
+species.occurrence.points_spdf
+#cut and plot the altitude layer
+# altitude layer to mask ocurrences 
+
+bio1 <- crop(wlclim_stack[[1]], extent(-120, -75, 6, 30))
+proj4string(bio1 )<-CRS.new
+plot(bio1 )
+#add the occurrence records
+plot(species.occurrence.points_spdf, axes=T, col="black", pch = 19, cex = 0.4, add = TRUE)
+
+###########################################################################
+# Mahalanobis distances
+
+# extract values from occurrence points
+table_colliei_thin
+nrow(table_colliei_thin)
+## [1] 84
+#remove nas
+extract.ocurr.na <- na.omit(table_colliei_thin)
+nrow(extract.ocurr.na)
+## [1] 84
+#new database without nas
+#is.na <- setdiff(extract.ocurr, extract.ocurr.na)
+#is.na.v <- is.na$X
+#df.geog.thin.na <- filter (df.geog.thin, ! (X %in% is.na.v))
+
+#subset of interest with extracted values
+am.values.maha <- table_colliei_thin [, c(3:21) ]
+rownames(am.values.maha) <- 1:nrow(am.values.maha)
+#calculate mahalanobis
+mah.am <- mahalanobis (am.values.maha[1:19], colMeans(am.values.maha[1:19]), cov(am.values.maha[1:19]), inverted=TRUE)
+#calculate some statistics
+media.am <- mean(mah.am)
+UnaDesvEst.am <- sd(mah.am)
+DosDesvEst.am <- sd(mah.am)*2
+desvest1.am <- c((media.am + UnaDesvEst.am) , (media.am - UnaDesvEst.am))
+desvest2.am <- c((media.am + DosDesvEst.am) , (media.am - DosDesvEst.am))
+# make the plot of the ocurrence points
+plot (mah.am, 1:length(mah.am), col="black") 
+abline (v=media.am, col="black") 
+abline(v=desvest1.am, col="green")
+abline(v=desvest2.am,col="red")
+text (mah.am, 1:length(mah.am), labels=names(mah.am), cex=0.6)
+#
+maha.dist.am.sd2 <- which( (mah.am > max(desvest2.am)) | (mah.am < min(desvest2.am)) )
+maha.dist.am.sd2
+# 59 66 67 79 
+
+#
+plot(bio1 )
+#add the occurrence records
+plot(species.occurrence.points_spdf, axes=T, col="black", pch = 19, cex = 0.4, add = TRUE)
+#add the removed occurrence records
+plot(species.occurrence.points_spdf[maha.dist.am.sd2, ], axes=T, col="red", pch=19, cex = 0.5, add=TRUE)
+
+#####################3##################################
+# correlation between vars
+# Extract values
+
+# A variance inflation factor (VIF) is a measure 
+# of the amount of multicollinearity in regression analysis. 
+# Multicollinearity exists when there is a correlation 
+# between multiple independent variables in a multiple regression model. 
+# This can adversely affect the regression results. 
+# Thus, the variance inflation factor can estimate 
+# how much the variance of a regression coefficient is inflated due to multicollinearity.
+
+plot(total_areas_calibration_stack_mask)
+species.vals.presences <- extract(total_areas_calibration_stack_mask, species.occurrence.points_spdf)
+species.vals.corr <- cor(species.vals.presences, method="pearson")
+species.vals.corr.df <- as.data.frame(species.vals.corr)
+heatmap(species.vals.corr)
+
+#export matrix
+write.table(species.vals.corr, file = "results/species.corr.matrix.csv", sep=",")
+ 
+# vif for presences  
+vif_occurrences_vars <- vifstep(species.vals.corr, keep = c("bio05", "bio02","bio13" ), th=10)
+vif_occurrences_vars 
+
+# correlation between vars selected
+psilocalo.subset.vars <- raster::subset(total_areas_calibration_stack_mask, c("bio02","bio03", "bio05","bio13", "bio15","bio18"))
+
+species.vals.presences_sub <- extract(psilocalo.subset.vars, species.occurrence.points_spdf)
+species.vals.corr.df_sub.cor <- cor(species.vals.presences_sub)
+heatmap(species.vals.corr.df_sub.cor)
+species.vals.corr.df_sub.cor
+
+#export matrix
+write.table(species.vals.corr.df_sub.cor, file = "results/species.sub.corr.matrix2.csv", sep=",")
+
+#
+plot(psilocalo.subset.vars)

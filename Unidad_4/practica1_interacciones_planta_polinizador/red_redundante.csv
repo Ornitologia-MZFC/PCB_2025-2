@@ -1,0 +1,11 @@
+,Polinizador sp1,Polinizador sp2,Polinizador sp3,Polinizador sp4,Polinizador sp5,Polinizador sp6,Polinizador sp7
+Planta sp1,0,10,0,10,0,10,0
+Planta sp2,10,10,0,10,0,10,0
+Planta sp3,10,10,0,0,0,10,0
+Planta sp4,10,10,100,0,0,10,0
+Planta sp5,10,10,100,0,100,10,0
+Planta sp6,10,10,100,0,100,10,0
+Planta sp7,0,10,0,0,0,10,0
+Planta sp8,0,0,0,10,0,10,0
+Planta sp9,1,0,0,10,0,10,0
+Planta sp10,0,0,0,0,0,0,100
