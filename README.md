@@ -19,9 +19,9 @@ Proveer las bases teóricas y prácticas para comprender, diseñar y ejecutar es
 
 **Objetivos específicos:**
 - Dominar de las bases teóricas ecológicas y genómicas para el estudio integrativo de la 
-biodiversidad. \
+biodiversidad. 
 - Desarrollar habilidades prácticas en el manejo de software especializado para el análisis de 
-información ecológica y genómica.\
+información ecológica y genómica.
 - Propiciar en los estudiantes la integración de diversos métodos para el análisis multifacético de los procesos de interacción ambiente-fenotipo-genotipo. 
 
 Al final se curso se pretende que el alumno esté familiarizado con enfoques novedosos de análisis de la biodiversidad en:
