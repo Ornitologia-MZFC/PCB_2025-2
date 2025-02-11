@@ -22,8 +22,7 @@ De manera general es posible identificar algunos pasos básicos en el procesamie
 
 
 <p align="center">
-  <img src="[http://some_place.com/image.png](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)" />
-</p>
+  <img src="(https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)"
 
 **Figura 1.** Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
 
