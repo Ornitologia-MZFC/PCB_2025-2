@@ -7,12 +7,12 @@ Reconocer los principales formatos de datos genómicos.
 Emplear algunos programas básicos para la limpieza de secuencias y la obtención de matrices de datos genómicos.
 
 #### Material
-Software: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (Andrews, 2010;), [Trimmomatic] (Bolger et al., 2014; http://www.usadellab.org/cms/?page=trimmomatic), [ipyrad) (Eaton y Overcast, 2020; https://ipyrad.readthedocs.io/en/master/).
-Secuencias genómicas: Datos crudos de secuenciación genómica disponibles en https://www.ncbi.nlm.nih.gov/sra/  
+Software: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (Andrews, 2010), [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) (Bolger et al., 2014), [ipyrad](https://ipyrad.readthedocs.io/en/master/) (Eaton y Overcast, 2020).
+Secuencias genómicas: Datos crudos de secuenciación genómica disponibles en [GenBank](https://www.ncbi.nlm.nih.gov/sra/).  
 
 #### Introducción
 El desarrollo de los métodos de secuenciación y análisis de las moléculas informativas presentes en el mundo vivo (DNA, RNA, proteínas) ha tenido un auge importante en la última década del siglo XX y lo que va del siglo XXI. Como consecuencia de estos avances, en la actualidad es posible conocer casi completamente el contenido de genomas, transcriptomas, proteomas y metabolomas de cualquier especie, lo que permite nuevas oportunidades para estudiar disímiles aspectos de la biología de organismos y taxones (De León et al., 2023). 
-Existen numerosas plataformas de secuenciación (por ejemplo: Illumina, PacBio, IonTorrent) y tipos de datos que pueden ser generados. Estos pueden ir desde lecturas cortas de unos 150 pares de bases hasta moléculas completas de DNA que comprenden miles de pares de bases (Satam et al., 2023). Esta información genómica puede ser almacenada en varios tipos de formatos que pueden ser empleados en diversos programas. A continuación se listan algunos de los formatos más frecuentes:
+Existen numerosas plataformas de secuenciación (por ejemplo: [Illumina](https://www.illumina.com/), [PacBio](https://www.pacb.com/), [IonTorrent](https://www.thermofisher.com/mx/es/home/brands/ion-torrent.html)) y tipos de datos que pueden ser generados. Estos pueden ir desde lecturas cortas de unos 150 pares de bases hasta moléculas completas de DNA que comprenden miles de pares de bases (Satam et al., 2023). Esta información genómica puede ser almacenada en varios tipos de formatos que pueden ser empleados en diversos programas. A continuación se listan algunos de los formatos más frecuentes:
 - SRA (del inglés: *Sequence Raw Archives*, Archivos de lectura de secuencia): archivo de datos sin procesar y con información sobre la calidad de las bases. Puede consistir de archivos binarios como .bam, .sff y .hdf5 o formatos de texto como .fastq.
 - FASTQ: es un formato basado en texto para almacenar una secuencia de nucleótidos e información sobre la calidad de estas bases. Tanto la letra de secuencia como la puntuación de calidad están codificadas con un único carácter .ascii. Un archivo FASTQ normalmente utiliza cuatro líneas por secuencia.
 - SAM (del inglés: *Sequence Alignment and Map*, Archivo de Alineamiento y Mapeo de Secuencias): archivos de texto que contienen la información de alineación de múltiples secuencias mapeadas contra secuencias de referencia (generalmente un genoma).
@@ -20,9 +20,10 @@ Existen numerosas plataformas de secuenciación (por ejemplo: Illumina, PacBio, 
 De manera general es posible identificar algunos pasos básicos en el procesamiento de los datos obtenidos en las plataformas de secuenciación para la obtención de matrices de datos genómicos (como los SNPs). Estas a su vez, puedan ser empleadas en posteriores estudios filogenómicos y poblacionales. En esta práctica realizaremos una introducción al procesamiento y análisis de algunos de los datos genómicos más comúnmente empleados en la actualidad (secuencias cortas generadas con tecnología de Illumina), cubriendo los pasos comprendidos desde la obtención de los datos crudos hasta la generación de los archivos .vcf (Figura 1).
 
  ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)
+ 
 **Figura 1.** Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
 
-Protocolo y Cuestionario
+#### Protocolo y Cuestionario
 **1- Descarga de secuencias genómicas**
 Desde la página donde se almacenan los datos crudos de secuenciación genómica en GenBank (https://www.ncbi.nlm.nih.gov/sra/), introducir el nombre del taxón de interés. A continuación, hacer click izquierdo sobre cada uno de los elementos de la lista (se recomiendan descargar al menos cinco muestras). En la nueva ventana, hacer click derecho sobre el vínculo a las lecturas (Parte inferior de la ventana, indicado con la palabra “Runs”). En esta nueva ventana, ir hacia la pestaña “Download FASTA/FASTQ” y desde allí, presionar el botón de descarga.
 Revisar los archivos descargados con la siguiente línea de código en la terminal:
