@@ -20,9 +20,7 @@ Existen numerosas plataformas de secuenciación (por ejemplo: [Illumina](https:/
 - VCF (del inglés: *Variant Calling Format*, Formato de llamada de variantes): archivo de texto que contiene información de los nucleótidos en diferentes posiciones del genoma (generalmente polimorfismos simples de nucleótidos, SNPs por sus siglas en inglés), así como otras líneas de metadatos.
 De manera general es posible identificar algunos pasos básicos en el procesamiento de los datos obtenidos en las plataformas de secuenciación para la obtención de matrices de datos genómicos (como los SNPs). Estas a su vez, puedan ser empleadas en posteriores estudios filogenómicos y poblacionales. En esta práctica realizaremos una introducción al procesamiento y análisis de algunos de los datos genómicos más comúnmente empleados en la actualidad (secuencias cortas generadas con tecnología de Illumina), cubriendo los pasos comprendidos desde la obtención de los datos crudos hasta la generación de los archivos .vcf (Figura 1).
 
-
-<p align="center">
-  <img src="(https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)"
+![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)
 
 **Figura 1.** Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
 
@@ -55,10 +53,10 @@ Esta línea genera un archivo de texto con parámetros predefinidos. Posteriorme
 A partir de los archivos obtenidos, contestar: ¿Qué tipo de archivos hemos obtenido? ¿Qué diferencias presentan entre sí? Visualizar el archivo cuyo nombre termina en “stats.txt” y responder: ¿Cuántos SNPs componen la matriz? ¿Cuántos datos perdidos contiene la matriz? ¿Cuántos SNPs y datos perdidos hay por cada muestra?
 
 Referencias
-Andrews, S. (2010). FastQC: a quality control tool for high throughput sequence data.
-Bolger, A. M., Lohse, M., y Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170.
-De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D. (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901.
-Eaton, D.A.R. y Overcast I. (2020) “ipyrad: Interactive assembly and analysis of RADseq datasets.” Bioinformatics.
-Moreira, L. R., Hernández-Baños, B. E., y Smith, B. T. (2020). Spatial predictors of genomic and phenotypic variation differ in a lowland Middle American bird (Icterus gularis). Molecular Ecology, 29(16), 3084-3101.
+Andrews, S. (2010). FastQC: a quality control tool for high throughput sequence data./
+Bolger, A. M., Lohse, M., y Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170./
+De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D. (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901./
+Eaton, D.A.R. y Overcast I. (2020) “ipyrad: Interactive assembly and analysis of RADseq datasets.” Bioinformatics./
+Moreira, L. R., Hernández-Baños, B. E., y Smith, B. T. (2020). Spatial predictors of genomic and phenotypic variation differ in a lowland Middle American bird (Icterus gularis). Molecular Ecology, 29(16), 3084-3101./
 Satam, H., Joshi, K., Mangrolia, U., Waghoo, S., Zaidi, G., Rawool, S., ... y Malonia, S. K. (2023). Next-generation sequencing technology: current trends and advancements. Biology, 12(7), 997.
 
