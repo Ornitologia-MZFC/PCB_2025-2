@@ -7,7 +7,7 @@ Reconocer los principales formatos de datos genómicos.
 Emplear algunos programas básicos para la limpieza de secuencias y la obtención de matrices de datos genómicos.
 
 #### Material
-Software: FastQC (Andrews, 2010; https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), Trimmomatic (Bolger et al., 2014; http://www.usadellab.org/cms/?page=trimmomatic), ipyrad (Eaton y Overcast, 2020; https://ipyrad.readthedocs.io/en/master/).
+Software: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (Andrews, 2010;), [Trimmomatic] (Bolger et al., 2014; http://www.usadellab.org/cms/?page=trimmomatic), [ipyrad) (Eaton y Overcast, 2020; https://ipyrad.readthedocs.io/en/master/).
 Secuencias genómicas: Datos crudos de secuenciación genómica disponibles en https://www.ncbi.nlm.nih.gov/sra/  
 
 #### Introducción
@@ -20,27 +20,30 @@ Existen numerosas plataformas de secuenciación (por ejemplo: Illumina, PacBio, 
 De manera general es posible identificar algunos pasos básicos en el procesamiento de los datos obtenidos en las plataformas de secuenciación para la obtención de matrices de datos genómicos (como los SNPs). Estas a su vez, puedan ser empleadas en posteriores estudios filogenómicos y poblacionales. En esta práctica realizaremos una introducción al procesamiento y análisis de algunos de los datos genómicos más comúnmente empleados en la actualidad (secuencias cortas generadas con tecnología de Illumina), cubriendo los pasos comprendidos desde la obtención de los datos crudos hasta la generación de los archivos .vcf (Figura 1).
 
  
-Figura 1. Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
+**Figura 1.** Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
 
 Protocolo y Cuestionario
-1- Descarga de secuencias genómicas
+**1- Descarga de secuencias genómicas**
 Desde la página donde se almacenan los datos crudos de secuenciación genómica en GenBank (https://www.ncbi.nlm.nih.gov/sra/), introducir el nombre del taxón de interés. A continuación, hacer click izquierdo sobre cada uno de los elementos de la lista (se recomiendan descargar al menos cinco muestras). En la nueva ventana, hacer click derecho sobre el vínculo a las lecturas (Parte inferior de la ventana, indicado con la palabra “Runs”). En esta nueva ventana, ir hacia la pestaña “Download FASTA/FASTQ” y desde allí, presionar el botón de descarga.
 Revisar los archivos descargados con la siguiente línea de código en la terminal:
  
 ¿Qué información está contenida en los archivos descargados? ¿Qué similitudes y diferencias tienen los archivos fastq con los archivos fasta descargados y utilizados en prácticas anteriores? ¿Qué significan los caracteres de la cuarta línea?
-2- Evaluación de la calidad de las secuencias
+
+**2- Evaluación de la calidad de las secuencias**
 Una vez descargado el programa FastQC (Andrews, 2010) desde https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ y descompactado, introducir la siguiente línea de código en la terminal:
  
 Los archivos obtenidos (en formato .html) pueden ser visualizados en cualquier navegador. Estos contienen información acerca de la calidad de las bases (Quality Phred scores), contenido de GC, adaptadores, bases no secuenciadas y longitud de secuencias (Figura 2).
  
-Figura 2. Pestaña correspondiente al análisis de calidad de las secuencias en FastQC.
+**Figura 2.** Pestaña correspondiente al análisis de calidad de las secuencias en FastQC.
 A partir de los archivos .html obtenidos, contestar: ¿Cuántas lecturas de secuencias tenemos? ¿Cuál es la longitud media? Compare estos valores entre las diferentes muestras.
-3- Edición y filtrado de las secuencias
+
+**3- Edición y filtrado de las secuencias**
 A partir de los archivos .fastq, cuya calidad fue evaluada con FastQC, realizar edición y filtrado de las lecturas de secuencias con Trimmomatic (Bolger et al., 2014) introduciendo la siguiente línea de código en la terminal:
  
 Consultar el manual del programa y responder: ¿Qué parámetros utilizamos en este análisis? ¿Qué resultados podrían esperarse si modificamos los parámetros de SLIDINGWINDOW?
 Analizar los fastq obtenidos en este paso con FastQC, ¿mejoró la calidad promedio de las lecturas? ¿Qué otros cambios notas respecto a los fastq originales?
-4- Creación de matriz de datos genómicos
+
+**4- Creación de matriz de datos genómicos**
 A partir de los archivos fastq generados en el paso anterior se construirá la matriz de datos genómicos que a su vez será empleada para los análisis siguientes. Para realizar esto, en primer lugar se debe crear el archivo de parámetros con el cual se correrá el programa ipyrad (Eaton y Overcast, 2020). 
  
 Esta línea genera un archivo de texto con parámetros predefinidos. Posteriormente se debe revisar la documentación del programa, discutir el significado de cada uno de los parámetros que se considerarán para el análisis y realizar los cambios pertinentes. Una vez se haya modificado este archivo, ejecutar la corrida de ipyrad con el siguiente comando:
