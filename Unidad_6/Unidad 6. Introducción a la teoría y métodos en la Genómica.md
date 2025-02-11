@@ -24,32 +24,34 @@ De manera general es posible identificar algunos pasos básicos en el procesamie
 **Figura 1.** Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
 
 #### Protocolo y Cuestionario
-**1- Descarga de secuencias genómicas**
-Desde la página donde se almacenan los datos crudos de secuenciación genómica en GenBank (https://www.ncbi.nlm.nih.gov/sra/), introducir el nombre del taxón de interés. A continuación, hacer click izquierdo sobre cada uno de los elementos de la lista (se recomiendan descargar al menos cinco muestras). En la nueva ventana, hacer click derecho sobre el vínculo a las lecturas (Parte inferior de la ventana, indicado con la palabra “Runs”). En esta nueva ventana, ir hacia la pestaña “Download FASTA/FASTQ” y desde allí, presionar el botón de descarga.
-Revisar los archivos descargados con la siguiente línea de código en la terminal:
+**1- Descarga de secuencias genómicas**  
+Desde la página donde se almacenan los datos crudos de secuenciación genómica en GenBank (https://www.ncbi.nlm.nih.gov/sra/), introducir el nombre del taxón de interés. A continuación, hacer click izquierdo sobre cada uno de los elementos de la lista (se recomiendan descargar al menos cinco muestras). En la nueva ventana, hacer click derecho sobre el vínculo a las lecturas (Parte inferior de la ventana, indicado con la palabra “Runs”). En esta nueva ventana, ir hacia la pestaña “Download FASTA/FASTQ” y desde allí, presionar el botón de descarga.  
+Revisar los archivos descargados con la siguiente línea de código en la terminal:  
 ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/head.png)   
 ¿Qué información está contenida en los archivos descargados? ¿Qué similitudes y diferencias tienen los archivos fastq con los archivos fasta descargados y utilizados en prácticas anteriores? ¿Qué significan los caracteres de la cuarta línea?
 
-**2- Evaluación de la calidad de las secuencias**
-Una vez descargado el programa FastQC (Andrews, 2010) desde https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ y descompactado, introducir la siguiente línea de código en la terminal:
+**2- Evaluación de la calidad de las secuencias**  
+Una vez descargado el programa FastQC (Andrews, 2010) desde https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ y descompactado, introducir la siguiente línea de código en la terminal:  
 ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/fastqc0.jpeg.jpg)  
 Los archivos obtenidos (en formato .html) pueden ser visualizados en cualquier navegador. Estos contienen información acerca de la calidad de las bases (Quality Phred scores), contenido de GC, adaptadores, bases no secuenciadas y longitud de secuencias (Figura 2).  
 ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/fastqc.jpg)  
-**Figura 2.** Pestaña correspondiente al análisis de calidad de las secuencias en FastQC.
+**Figura 2.** Pestaña correspondiente al análisis de calidad de las secuencias en FastQC.  
 A partir de los archivos .html obtenidos, contestar: ¿Cuántas lecturas de secuencias tenemos? ¿Cuál es la longitud media? Compare estos valores entre las diferentes muestras.
 
-**3- Edición y filtrado de las secuencias**
-A partir de los archivos .fastq, cuya calidad fue evaluada con FastQC, realizar edición y filtrado de las lecturas de secuencias con Trimmomatic (Bolger et al., 2014) introduciendo la siguiente línea de código en la terminal:
- 
-Consultar el manual del programa y responder: ¿Qué parámetros utilizamos en este análisis? ¿Qué resultados podrían esperarse si modificamos los parámetros de SLIDINGWINDOW?
+**3- Edición y filtrado de las secuencias**  
+A partir de los archivos .fastq, cuya calidad fue evaluada con FastQC, realizar edición y filtrado de las lecturas de secuencias con Trimmomatic (Bolger et al., 2014) introduciendo la siguiente línea de código en la terminal:  
+ ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/trimmomatic.jpg)  
+Consultar el manual del programa y responder:  
+¿Qué parámetros utilizamos en este análisis? ¿Qué resultados podrían esperarse si modificamos los parámetros de SLIDINGWINDOW?
 Analizar los fastq obtenidos en este paso con FastQC, ¿mejoró la calidad promedio de las lecturas? ¿Qué otros cambios notas respecto a los fastq originales?
 
-**4- Creación de matriz de datos genómicos**
-A partir de los archivos fastq generados en el paso anterior se construirá la matriz de datos genómicos que a su vez será empleada para los análisis siguientes. Para realizar esto, en primer lugar se debe crear el archivo de parámetros con el cual se correrá el programa ipyrad (Eaton y Overcast, 2020). 
- 
-Esta línea genera un archivo de texto con parámetros predefinidos. Posteriormente se debe revisar la documentación del programa, discutir el significado de cada uno de los parámetros que se considerarán para el análisis y realizar los cambios pertinentes. Una vez se haya modificado este archivo, ejecutar la corrida de ipyrad con el siguiente comando:
- 
-A partir de los archivos obtenidos, contestar: ¿Qué tipo de archivos hemos obtenido? ¿Qué diferencias presentan entre sí? Visualizar el archivo cuyo nombre termina en “stats.txt” y responder: ¿Cuántos SNPs componen la matriz? ¿Cuántos datos perdidos contiene la matriz? ¿Cuántos SNPs y datos perdidos hay por cada muestra?
+**4- Creación de matriz de datos genómicos**  
+A partir de los archivos fastq generados en el paso anterior se construirá la matriz de datos genómicos que a su vez será empleada para los análisis siguientes. Para realizar esto, en primer lugar se debe crear el archivo de parámetros con el cual se correrá el programa ipyrad (Eaton y Overcast, 2020).  
+![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/ipyrad_params.jpeg.jpg)  
+Esta línea genera un archivo de texto con parámetros predefinidos. Posteriormente se debe revisar la documentación del programa, discutir el significado de cada uno de los parámetros que se considerarán para el análisis y realizar los cambios pertinentes. Una vez se haya modificado este archivo, ejecutar la corrida de ipyrad con el siguiente comando:  
+![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/ipyrad_steps.jpeg.jpg)  
+A partir de los archivos obtenidos, contestar:  
+¿Qué tipo de archivos hemos obtenido? ¿Qué diferencias presentan entre sí? Visualizar el archivo cuyo nombre termina en “stats.txt” y responder: ¿Cuántos SNPs componen la matriz? ¿Cuántos datos perdidos contiene la matriz? ¿Cuántos SNPs y datos perdidos hay por cada muestra?
 
 Referencias  
 **Andrews, S.** (2010). FastQC: a quality control tool for high throughput sequence data.  
