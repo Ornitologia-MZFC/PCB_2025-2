@@ -53,7 +53,7 @@ Esta línea genera un archivo de texto con parámetros predefinidos. Posteriorme
 A partir de los archivos obtenidos, contestar:  
 ¿Qué tipo de archivos hemos obtenido? ¿Qué diferencias presentan entre sí? Visualizar el archivo cuyo nombre termina en “stats.txt” y responder: ¿Cuántos SNPs componen la matriz? ¿Cuántos datos perdidos contiene la matriz? ¿Cuántos SNPs y datos perdidos hay por cada muestra?
 
-Referencias  
+#### Referencias  
 **Andrews, S.** (2010). FastQC: a quality control tool for high throughput sequence data.  
 **Bolger, A. M., Lohse, M., y Usadel, B.** (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170.  
 **De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D.** (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901.  
