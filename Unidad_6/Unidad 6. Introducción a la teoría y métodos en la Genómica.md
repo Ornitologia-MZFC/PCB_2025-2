@@ -53,10 +53,11 @@ Esta línea genera un archivo de texto con parámetros predefinidos. Posteriorme
 A partir de los archivos obtenidos, contestar: ¿Qué tipo de archivos hemos obtenido? ¿Qué diferencias presentan entre sí? Visualizar el archivo cuyo nombre termina en “stats.txt” y responder: ¿Cuántos SNPs componen la matriz? ¿Cuántos datos perdidos contiene la matriz? ¿Cuántos SNPs y datos perdidos hay por cada muestra?
 
 Referencias
-Andrews, S. (2010). FastQC: a quality control tool for high throughput sequence data./
-Bolger, A. M., Lohse, M., y Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170./
-De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D. (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901./
-Eaton, D.A.R. y Overcast I. (2020) “ipyrad: Interactive assembly and analysis of RADseq datasets.” Bioinformatics./
-Moreira, L. R., Hernández-Baños, B. E., y Smith, B. T. (2020). Spatial predictors of genomic and phenotypic variation differ in a lowland Middle American bird (Icterus gularis). Molecular Ecology, 29(16), 3084-3101./
+Andrews, S. (2010). FastQC: a quality control tool for high throughput sequence data.
+
+Bolger, A. M., Lohse, M., y Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170.  
+De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D. (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901.  
+Eaton, D.A.R. y Overcast I. (2020) “ipyrad: Interactive assembly and analysis of RADseq datasets.” Bioinformatics.  
+Moreira, L. R., Hernández-Baños, B. E., y Smith, B. T. (2020). Spatial predictors of genomic and phenotypic variation differ in a lowland Middle American bird (Icterus gularis). Molecular Ecology, 29(16), 3084-3101.  
 Satam, H., Joshi, K., Mangrolia, U., Waghoo, S., Zaidi, G., Rawool, S., ... y Malonia, S. K. (2023). Next-generation sequencing technology: current trends and advancements. Biology, 12(7), 997.
 
