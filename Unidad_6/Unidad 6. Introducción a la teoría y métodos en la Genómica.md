@@ -8,6 +8,7 @@ Emplear algunos programas básicos para la limpieza de secuencias y la obtenció
 
 #### Material
 Software: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (Andrews, 2010), [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) (Bolger et al., 2014), [ipyrad](https://ipyrad.readthedocs.io/en/master/) (Eaton y Overcast, 2020).
+
 Secuencias genómicas: Datos crudos de secuenciación genómica disponibles en [GenBank](https://www.ncbi.nlm.nih.gov/sra/).  
 
 #### Introducción
@@ -19,8 +20,11 @@ Existen numerosas plataformas de secuenciación (por ejemplo: [Illumina](https:/
 - VCF (del inglés: *Variant Calling Format*, Formato de llamada de variantes): archivo de texto que contiene información de los nucleótidos en diferentes posiciones del genoma (generalmente polimorfismos simples de nucleótidos, SNPs por sus siglas en inglés), así como otras líneas de metadatos.
 De manera general es posible identificar algunos pasos básicos en el procesamiento de los datos obtenidos en las plataformas de secuenciación para la obtención de matrices de datos genómicos (como los SNPs). Estas a su vez, puedan ser empleadas en posteriores estudios filogenómicos y poblacionales. En esta práctica realizaremos una introducción al procesamiento y análisis de algunos de los datos genómicos más comúnmente empleados en la actualidad (secuencias cortas generadas con tecnología de Illumina), cubriendo los pasos comprendidos desde la obtención de los datos crudos hasta la generación de los archivos .vcf (Figura 1).
 
- ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)
- 
+
+<p align="center">
+  <img src="[http://some_place.com/image.png](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/flujo.png)" />
+</p>
+
 **Figura 1.** Pasos básicos para la obtención de matrices de datos genómicos a partir de secuencias cortas generadas con Illumina.
 
 #### Protocolo y Cuestionario
