@@ -2,13 +2,12 @@
 
 ## Introducción al software empleado en estudios de genómica de organismos no modelo
 
-#### Objetivo 
-Reconocer los principales formatos de datos genómicos.
-Emplear algunos programas básicos para la limpieza de secuencias y la obtención de matrices de datos genómicos.
+#### Objetivo   
+Reconocer los principales formatos de datos genómicos.  
+Emplear algunos programas básicos para la limpieza de secuencias y la obtención de matrices de datos genómicos.  
 
 #### Material
-Software: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (Andrews, 2010), [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) (Bolger et al., 2014), [ipyrad](https://ipyrad.readthedocs.io/en/master/) (Eaton y Overcast, 2020).
-
+Software: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (Andrews, 2010), [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) (Bolger et al., 2014), [ipyrad](https://ipyrad.readthedocs.io/en/master/) (Eaton y Overcast, 2020).  
 Secuencias genómicas: Datos crudos de secuenciación genómica disponibles en [GenBank](https://www.ncbi.nlm.nih.gov/sra/).  
 
 #### Introducción
@@ -28,14 +27,14 @@ De manera general es posible identificar algunos pasos básicos en el procesamie
 **1- Descarga de secuencias genómicas**
 Desde la página donde se almacenan los datos crudos de secuenciación genómica en GenBank (https://www.ncbi.nlm.nih.gov/sra/), introducir el nombre del taxón de interés. A continuación, hacer click izquierdo sobre cada uno de los elementos de la lista (se recomiendan descargar al menos cinco muestras). En la nueva ventana, hacer click derecho sobre el vínculo a las lecturas (Parte inferior de la ventana, indicado con la palabra “Runs”). En esta nueva ventana, ir hacia la pestaña “Download FASTA/FASTQ” y desde allí, presionar el botón de descarga.
 Revisar los archivos descargados con la siguiente línea de código en la terminal:
- 
+![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/head.png)   
 ¿Qué información está contenida en los archivos descargados? ¿Qué similitudes y diferencias tienen los archivos fastq con los archivos fasta descargados y utilizados en prácticas anteriores? ¿Qué significan los caracteres de la cuarta línea?
 
 **2- Evaluación de la calidad de las secuencias**
 Una vez descargado el programa FastQC (Andrews, 2010) desde https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ y descompactado, introducir la siguiente línea de código en la terminal:
- 
-Los archivos obtenidos (en formato .html) pueden ser visualizados en cualquier navegador. Estos contienen información acerca de la calidad de las bases (Quality Phred scores), contenido de GC, adaptadores, bases no secuenciadas y longitud de secuencias (Figura 2).
- 
+![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/fastqc0.jpeg.jpg)  
+Los archivos obtenidos (en formato .html) pueden ser visualizados en cualquier navegador. Estos contienen información acerca de la calidad de las bases (Quality Phred scores), contenido de GC, adaptadores, bases no secuenciadas y longitud de secuencias (Figura 2).  
+![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/fastqc.jpg)  
 **Figura 2.** Pestaña correspondiente al análisis de calidad de las secuencias en FastQC.
 A partir de los archivos .html obtenidos, contestar: ¿Cuántas lecturas de secuencias tenemos? ¿Cuál es la longitud media? Compare estos valores entre las diferentes muestras.
 
@@ -52,12 +51,11 @@ Esta línea genera un archivo de texto con parámetros predefinidos. Posteriorme
  
 A partir de los archivos obtenidos, contestar: ¿Qué tipo de archivos hemos obtenido? ¿Qué diferencias presentan entre sí? Visualizar el archivo cuyo nombre termina en “stats.txt” y responder: ¿Cuántos SNPs componen la matriz? ¿Cuántos datos perdidos contiene la matriz? ¿Cuántos SNPs y datos perdidos hay por cada muestra?
 
-Referencias
-Andrews, S. (2010). FastQC: a quality control tool for high throughput sequence data.
-
-Bolger, A. M., Lohse, M., y Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170.  
-De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D. (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901.  
-Eaton, D.A.R. y Overcast I. (2020) “ipyrad: Interactive assembly and analysis of RADseq datasets.” Bioinformatics.  
-Moreira, L. R., Hernández-Baños, B. E., y Smith, B. T. (2020). Spatial predictors of genomic and phenotypic variation differ in a lowland Middle American bird (Icterus gularis). Molecular Ecology, 29(16), 3084-3101.  
-Satam, H., Joshi, K., Mangrolia, U., Waghoo, S., Zaidi, G., Rawool, S., ... y Malonia, S. K. (2023). Next-generation sequencing technology: current trends and advancements. Biology, 12(7), 997.
+Referencias  
+**Andrews, S.** (2010). FastQC: a quality control tool for high throughput sequence data.  
+**Bolger, A. M., Lohse, M., y Usadel, B.** (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, btu170.  
+**De León, L. F., Silva, B., Avilés-Rodríguez, K. J., y Buitrago-Rosas, D.** (2023). Harnessing the omics revolution to address the global biodiversity crisis. Current Opinion in Biotechnology, 80, 102901.  
+**Eaton, D.A.R. y Overcast I.** (2020) “ipyrad: Interactive assembly and analysis of RADseq datasets.” Bioinformatics.  
+**Moreira, L. R., Hernández-Baños, B. E., y Smith, B. T.** (2020). Spatial predictors of genomic and phenotypic variation differ in a lowland Middle American bird (Icterus gularis). Molecular Ecology, 29(16), 3084-3101.  
+**Satam, H., Joshi, K., Mangrolia, U., Waghoo, S., Zaidi, G., Rawool, S., ... y Malonia, S. K.** (2023). Next-generation sequencing technology: current trends and advancements. Biology, 12(7), 997.
 
