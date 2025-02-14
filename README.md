@@ -3,7 +3,7 @@
 
 ### Semestre 2025-2 
 
-![Semestre 2025-2](Unidad_4/figuras/20250210_132644.jpg) 
+![Semestre 2025-2](Unidad_4/figuras/20250213_134821.jpg) 
 
 **En este repositorio se encuentra el material correspondiente al curso "Bases ecológicas y genómicas de la interacción organismo-ambiente".**
 
