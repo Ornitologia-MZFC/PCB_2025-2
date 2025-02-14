@@ -18,7 +18,7 @@ Propiciar en los estudiantes la integración de diversos métodos para el análi
 ### Temario  
 **Unidad 1** Introducción – Conceptos básicos  
 **Unidad 2** [Teoría y métodos de estudio de Comunidades](https://github.com/Ornitologia-MZFC/PCB_2025-2/tree/main/Unidad_2)  
-**Unidad 3** Teoría y métodos de estudio de Reglas de ensamblaje  
+**Unidad 3** [Teoría y métodos de estudio de Reglas de ensamblaje](https://github.com/Ornitologia-MZFC/PCB_2025-2/tree/main/Unidad_3)  
 **Unidad 4** [Teoría y métodos de estudio de Nicho Ecológico](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_4/unidad_4.md)  
 **Unidad 5** [Interacción fenotipo-ambiente](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_5/presentacion_unidad_5.md)  
 **Unidad 6** [Introducción a la teoría y métodos en la Genómica](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/Unidad%206.%20Introducci%C3%B3n%20a%20la%20teor%C3%ADa%20y%20m%C3%A9todos%20en%20la%20Gen%C3%B3mica%201.md)  
