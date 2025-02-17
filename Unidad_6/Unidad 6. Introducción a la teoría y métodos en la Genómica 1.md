@@ -35,7 +35,9 @@ Revisar los archivos descargados con la siguiente línea de código en la termin
 **2- Evaluación de la calidad de las secuencias**  
 Una vez descargado el programa FastQC (Andrews, 2010) desde https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ y descompactado, introducir la siguiente línea de código en la terminal:
 
-`$ ruta/a/la/carpeta/de/instalación/de/fastqc/fastqc ruta/al/archivo/fastq/descargado/*.fastq -o ruta/donde/se/guardarán/los/resultados` 
+```
+$ ruta/a/la/carpeta/de/instalación/de/fastqc/fastqc ruta/al/archivo/fastq/descargado/*.fastq -o ruta/donde/se/guardarán/los/resultados
+``` 
   
 Los archivos obtenidos (en formato .html) pueden ser visualizados en cualquier navegador. Estos contienen información acerca de la calidad de las bases (Quality Phred scores), contenido de GC, adaptadores, bases no secuenciadas y longitud de secuencias (Figura 2).  
 ![](https://github.com/Ornitologia-MZFC/PCB_2025-2/blob/main/Unidad_6/images/fastqc.jpg)  
