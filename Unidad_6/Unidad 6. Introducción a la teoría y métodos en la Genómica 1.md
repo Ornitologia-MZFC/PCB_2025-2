@@ -28,7 +28,7 @@ De manera general es posible identificar algunos pasos básicos en el procesamie
 Desde la página donde se almacenan los datos crudos de secuenciación genómica en GenBank (https://www.ncbi.nlm.nih.gov/sra/), introducir el nombre del taxón de interés. A continuación, hacer click izquierdo sobre cada uno de los elementos de la lista (se recomiendan descargar al menos cinco muestras). En la nueva ventana, hacer click derecho sobre el vínculo a las lecturas (Parte inferior de la ventana, indicado con la palabra “Runs”). En esta nueva ventana, ir hacia la pestaña “Download FASTA/FASTQ” y desde allí, presionar el botón de descarga.  
 Revisar los archivos descargados con la siguiente línea de código en la terminal:   
   
-`$ head ruta/al/archivo/fastq/descargado/*.fastq`  
+```$ head ruta/al/archivo/fastq/descargado/*.fastq```  
   
 ¿Qué información está contenida en los archivos descargados? ¿Qué similitudes y diferencias tienen los archivos fastq con los archivos fasta descargados y utilizados en prácticas anteriores? ¿Qué significan los caracteres de la cuarta línea?
 
