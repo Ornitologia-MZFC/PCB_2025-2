@@ -1,6 +1,6 @@
 # Introducción a la Genómica
 
-## 1. Datos genómicos y programas básicos para la limpieza de secuencias y la obtención de matrices de datos genómicos.
+## Práctica 1. Datos genómicos y programas básicos para la limpieza de secuencias y la obtención de matrices de datos genómicos.
 
 #### Objetivo   
 Reconocer los principales formatos de datos genómicos.  
